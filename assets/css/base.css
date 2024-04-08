@@ -1,0 +1,233 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #EE4D2D;
+    --primary-color-rgba: rgb(238, 75, 43);
+    --border-color: #dbdbdb;
+
+    --header-height: 120px;
+    --navbar-height: 34px;
+    --header-with-search-height: calc(var(--header-height) - var(--navbar-height));
+
+
+}
+*{
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: "Roboto", sans-serif;
+    box-sizing: border-box;
+}
+
+.grid {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.grid__full-width {
+    width: 100%;
+}
+
+.grid__row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+/* test */
+.gird__colum-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+
+.grid__colum-2-4 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+
+.grid__colum-10 {
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+
+
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    form {
+        transform: scale(var(--growth-form));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+}
+.modal__overplay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+ 
+}
+
+.modal__body {
+    --growth-form: 0.7;
+    --growth-to: 1;
+    background: var(--white-color);
+    border-radius: 5px;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+    animation: growth linear 0.1s;
+}
+
+/* button style */
+.btn {
+    min-width: 142px;
+    height: 36px;
+    text-decoration: none;
+    border: none;
+    color: var(--text-color);
+    border-radius: 3px;
+    font-size: 1.4rem;
+    /* background: rgba(109, 101, 101, 0.02); */
+    background: var(--white-color);
+    padding: 0;
+    cursor: pointer;
+    line-height: 1.6rem;
+}
+.btn:hover {
+    background: rgb(0, 0, 0,0.5);
+    
+    /* background: red; */
+}
+
+.btn.btn-size-s {
+    height: 30px;
+    font-size: 12px;
+
+}
+.btn.btn--primary {
+    color: var(--white-color);
+    background: var(--primary-color);
+}
+
+.btn.btn--disabled {
+    cursor: default;
+    background-color: #666;
+    color: #949494;
+}
+
+/* selection */
+.select-input {
+    position: relative;
+    height: 34px;
+    padding: 0 12px;
+    border-radius: 2px;
+    min-width: 190px;
+    background-color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+}
+
+.select-input:hover .select-input__list {
+    display: block;
+}
+
+.select-input::after {
+    position: absolute;
+    content: "";
+    top: 99%;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: transparent;
+}
+
+.select-input__list {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    padding: 10px 16px;
+    top: 22px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    list-style: none;
+    display: none;
+    z-index: 1;
+}
+
+.select-input__item a {
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    padding: 5px 0;
+}
+
+.select-input__item a:hover {
+    color: var(--primary-color);
+}
+
+/* pagination */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.pagination-item {
+    margin: 0 14px;
+}
+.pagination-item__active .pagination-item__link {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.pagination-item__active .pagination-item__link:hover {
+    background-color: #939393;
+}
+
+.pagination-item__link {
+    display: block;
+    text-decoration: none;
+    font-size: 2rem;
+    font-weight: 300;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    text-align: center;
+    border-radius: 2px;
+    line-height: 30px;
+}
