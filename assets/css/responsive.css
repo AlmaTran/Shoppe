@@ -1,0 +1,128 @@
+
+
+/* mobile and tablet */
+@media (max-width: 1023px) {
+    :root {
+        --header-height: 68px;
+        --navbar-height: 0px;
+    }
+    .hide-on-mobile-tablet {
+        display: none;
+    }
+    .header {
+        position: fixed;
+        left: 0;
+        top: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    .app-container {
+        margin-top: var(--header-height);
+    }
+    .header__sort-bar {
+        display: flex;
+    }
+    .app__content {
+        padding-top: 8px;
+    }
+
+    .mobile-category {
+        display: none;
+    }
+
+}
+
+
+/* tablet */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .hide-on-tablet {
+        display: none;
+    }
+
+    .header__cart {
+        width: 80px;
+        text-align: right;
+    }
+    .header__cart-tablet {
+        padding-right: 130px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .hide-on-mobile {
+        display: none;
+    }
+    .header-with-search {
+        justify-content: space-between;
+    }
+    .header__logo {
+        width: unset;
+    }
+    .header__cart {
+        width: unset;
+    }
+    .header__search {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        height: 46px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        z-index: 1;
+        padding: 0 16px;
+        animation: mobileSearchSideIn linear 0.3s;
+        display: none;
+    }   
+    .header__sort-bar {
+        display: none;
+    }
+
+    .pagination-item {
+        margin: 0;
+    }
+
+    .pagination-item__link {
+        height: 28px;
+        font-size: 1.6rem;
+        min-width: 36px;
+
+    }
+    .app__content {
+        margin: 0 20px;
+    }
+    .mobile-category {
+        display: block;
+        /* margin-top: 15px; */
+        /* margin-bottom: 10px; */
+    }
+
+    .home-product {
+        margin-top: 60px;
+    }
+    .header__sort-bar {
+        display: block;
+        display: flex;
+    }
+    .footer {
+        padding: 0 16px;
+    }
+
+  
+
+
+    @keyframes mobileSearchSideIn {
+
+        from {
+            opacity: 0;
+            top: calc(var(--header-height) / 2);
+        }
+        to {
+            opacity: 1;
+            top: var(--header-height);
+        }
+        
+    }
+
+}
